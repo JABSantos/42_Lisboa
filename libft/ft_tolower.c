@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <josantos@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 16:05:05 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/19 15:42:11 by josantos         ###   ########.fr       */
+/*   Created: 2021/02/17 16:40:03 by josantos          #+#    #+#             */
+/*   Updated: 2021/02/19 17:59:25 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_tolower(int c)
 {
-	int a;
-	int b;
-
-	a = 0;
-	b = ft_strlen(s);
-	while (b >= 0)
-	{
-		if (s[b] == (char)c)
-			return (((char *)s) + b);
-		b--;
-	}
-	return (0);
+	if (c >= 0x41 && c <= 0x5a)
+		return (c + 32);
+	else
+		return (c);
 }

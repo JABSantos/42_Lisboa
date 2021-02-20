@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 13:20:17 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/19 18:00:29 by josantos         ###   ########.fr       */
+/*   Created: 2021/02/20 11:45:45 by josantos          #+#    #+#             */
+/*   Updated: 2021/02/20 14:28:50 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int a;
-	unsigned int length;
+	int		a;
+	int		b;
+	int		c;
+	char	*p;
 
 	a = 0;
-	length = 0;
-	if (dst == '\0' && src == '\0')
+	b = ft_strlen(s1);
+	c = 0;
+	if (s1 == 0)
 		return (0);
-	while (src[length])
-		length++;
-	if (dstsize > 0)
+	while (ft_strchr(set, s1[a]))
+		a++;
+	while (ft_strchr(set, s1[b]) && b > a)
+		b--;
+	if (!(p = (char *)malloc(((sizeof(char) * b) + 1))))
+		return (0);
+	while (a <= b)
 	{
-		while (src[a] != '\0' && a < (dstsize - 1))
-		{
-			dst[a] = src[a];
-			a++;
-		}
-		dst[a] = '\0';
+		p[c] = s1[a];
+		a++;
+		c++;
 	}
-	return (length);
+	p[c] = '\0';
+	return (p);
 }

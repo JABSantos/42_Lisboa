@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 13:20:17 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/19 18:00:29 by josantos         ###   ########.fr       */
+/*   Created: 2021/02/19 19:43:52 by josantos          #+#    #+#             */
+/*   Updated: 2021/02/19 21:10:03 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	unsigned int a;
-	unsigned int length;
+	size_t a;
+	char *p;
 
 	a = 0;
-	length = 0;
-	if (dst == '\0' && src == '\0')
+	if (s == NULL)
 		return (0);
-	while (src[length])
-		length++;
-	if (dstsize > 0)
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len >= ft_strlen(s))
 	{
-		while (src[a] != '\0' && a < (dstsize - 1))
-		{
-			dst[a] = src[a];
-			a++;
-		}
-		dst[a] = '\0';
+		if(!(p = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+			return(0);
 	}
-	return (length);
+	else if (!(p = (char *)malloc(sizeof(char) * len + 1)))
+		return (0);
+	while (s[a] && a < len)
+	{
+		p[a++] = s[start++];
+	}
+	p[a] = '\0';
+	return(p);
 }
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   teste_mains.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: josantos <josantos@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 19:21:24 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/13 21:17:17 by josantos         ###   ########.fr       */
+/*   Updated: 2021/02/20 14:01:31 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 #include <ctype.h>
 
 int		main(void)
-{
-		char a[] = "-2147483648";
-		
-		printf("%d\n", ft_atoi(a));
-		printf("%d\n", atoi(a));
+{	
+char *s = ft_strtrim("   xxx   xxx", " x");
+
+	printf("%s\n",s);
+	//printf("%d\n", ft_strncmp("345", "845", 1));
 }

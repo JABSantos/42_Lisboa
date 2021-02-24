@@ -1,41 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 11:45:45 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/20 14:28:50 by josantos         ###   ########.fr       */
+/*   Created: 2021/02/22 16:15:29 by josantos          #+#    #+#             */
+/*   Updated: 2021/02/22 19:16:27 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	printnum(int n)
 {
-	int		a;
-	int		b;
 	int		c;
-	char	*p;
 
-	a = 0;
-	b = ft_strlen(s1);
 	c = 0;
-	if (s1 == 0)
-		return (0);
-	while (ft_strchr(set, s1[a]))
-		a++;
-	while (ft_strchr(set, s1[b]) && b > a)
-		b--;
-	if (!(p = (char *)malloc(((sizeof(char) * b) + 1))))
-		return (0);
-	while (a <= b)
+	if (n == 0)
 	{
-		p[c] = s1[a];
-		a++;
-		c++;
+		c = 1;
+		return (c);
 	}
-	p[c] = '\0';
+	if (n < 0)
+		c++;
+	while (n)
+	{
+		c++;
+		n = n / 10;
+	}
+	return (c);
+}
+
+char		*ft_itoa(int n)
+{
+	char	*p;
+	int		b;
+
+	b = printnum(n);
+	if (!(p = (char *)ft_calloc(sizeof(char), (b + 1))))
+		return (0);
+	if (n == 0)
+		p[0] = '0';
+	if (n < 0)
+	{
+		p[0] = '-';
+		if (n == -2147483648)
+		{
+			p[b-- - 1] = '8';
+			n = n / 10;
+		}
+		n = -n;
+	}
+	while (n != 0 && b >= 0)
+	{
+		p[b-- - 1] = n % 10 + '0';
+		n /= 10;
+	}
 	return (p);
 }

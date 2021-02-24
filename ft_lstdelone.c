@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 13:56:17 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/13 20:56:36 by josantos         ###   ########.fr       */
+/*   Created: 2021/02/23 13:14:17 by josantos          #+#    #+#             */
+/*   Updated: 2021/02/23 17:06:05 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	size_t a;
-	size_t b;
-
-	a = 0;
-	if (needle[a] == 0)
-		return ((char *)haystack);
-	while (haystack[a] != '\0' || a <= len)
-	{
-		b = 0;
-		while (needle[b] == haystack[a + b] && (a + b) < len)
-		{
-			if (needle[b + 1] == '\0')
-				return ((char *)haystack + a);
-			b++;
-		}
-		a++;
-	}
-	return (0);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

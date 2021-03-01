@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 16:15:29 by josantos          #+#    #+#             */
-/*   Updated: 2021/02/22 19:16:27 by josantos         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:47:51 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,18 @@ char		*ft_itoa(int n)
 	char	*p;
 	int		b;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	b = printnum(n);
-	if (!(p = (char *)ft_calloc(sizeof(char), (b + 1))))
+	p = (char *)malloc(sizeof(char) * (b + 1));
+	if (p == 0)
 		return (0);
 	if (n == 0)
 		p[0] = '0';
+	p[b] = '\0';
 	if (n < 0)
 	{
 		p[0] = '-';
-		if (n == -2147483648)
-		{
-			p[b-- - 1] = '8';
-			n = n / 10;
-		}
 		n = -n;
 	}
 	while (n != 0 && b >= 0)

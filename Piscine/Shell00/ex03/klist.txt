@@ -1,0 +1,5 @@
+Credentials cache: API:DFF9C390-C4AB-4696-A2F7-0707183992BC
+        Principal: josantos@42LISBOA.COM
+
+  Issued                Expires               Principal
+Jan  4 17:11:07 2021  Jan  5 03:11:07 2021  krbtgt/42LISBOA.COM@42LISBOA.COM

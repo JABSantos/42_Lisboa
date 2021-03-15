@@ -6,13 +6,13 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 17:58:45 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/15 14:20:08 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/15 15:02:25 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static char	*handle_zero(t_flags *flags, int *count,  char *p)
+static char	*handle_zero(t_flags *flags, int *count, char *p)
 {
 	char	*temp;
 
@@ -28,10 +28,9 @@ static char	*handle_zero(t_flags *flags, int *count,  char *p)
 	}
 	temp = p;
 	p = ft_strjoin("0x", p);
-	free (temp);
+	free(temp);
 	return (p);
 }
-
 
 int			case_p(t_flags *flags, va_list args)
 {

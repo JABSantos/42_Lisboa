@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 13:44:25 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/15 14:15:30 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:38:45 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char		*arg_conversion(t_flags *flags, va_list args)
 	else if (flags->type == 'X')
 		return (ft_itoa_base(va_arg(args, unsigned), "0123456789ABCDEF"));
 	else if (flags->type == 'p')
-		return (ft_l_itoa_base(va_arg(args, unsigned long), "0123456789abcdef"));
+		return (ft_litoa_base(va_arg(args, unsigned long), "0123456789abcdef"));
 	else
 		return (NULL);
 }

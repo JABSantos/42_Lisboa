@@ -6,15 +6,15 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 17:58:45 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/15 13:07:26 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:42:57 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static char	*handle_zero(t_flags *flags, int *count,  char *p)
+static	char	*handle_zero(t_flags *flags, int *count, char *p)
 {
-	char	*temp;
+	char		*temp;
 
 	if (flags->point)
 		flags->zero = 0;
@@ -29,11 +29,10 @@ static char	*handle_zero(t_flags *flags, int *count,  char *p)
 	return (p);
 }
 
-
-int			case_capital_x(t_flags *flags, va_list args)
+int				case_capital_x(t_flags *flags, va_list args)
 {
-	int		count;
-	char	*p;
+	int			count;
+	char		*p;
 
 	count = 0;
 	p = arg_conversion(flags, args);

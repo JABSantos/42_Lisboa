@@ -6,16 +6,16 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:05:48 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/15 14:13:22 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:40:53 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_base(char *str)
+static int			check_base(char *str)
 {
-	int a;
-	int b;
+	int				a;
+	int				b;
 
 	if (ft_strlen(str) < 1)
 		return (0);
@@ -40,7 +40,7 @@ static int	check_base(char *str)
 
 static int			get_len(unsigned long n, int b)
 {
-	int		a;
+	int				a;
 
 	a = 0;
 	if (n == 0)
@@ -53,11 +53,11 @@ static int			get_len(unsigned long n, int b)
 	return (a);
 }
 
-char		*ft_l_itoa_base(unsigned long n, char *base)
+char				*ft_litoa_base(unsigned long n, char *base)
 {
-	int		b;
-	int		len;
-	char	*p;
+	int				b;
+	int				len;
+	char			*p;
 
 	b = check_base(base);
 	if (!b)

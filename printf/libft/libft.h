@@ -6,7 +6,7 @@
 /*   By: josantos <josantos@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:17:37 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/15 14:10:50 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:38:41 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ int				ft_putchar(char a);
 int				ft_putstr(char *str);
 int				ft_putstr_len(char *str, int len);
 char			*ft_itoa_base(unsigned int n, char *base);
-char			*ft_l_itoa_base(unsigned long, char *base);
+char			*ft_litoa_base(unsigned long n, char *base);
 #endif

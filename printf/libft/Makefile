@@ -6,7 +6,7 @@
 #    By: josantos <josantos@42lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 16:08:51 by josantos          #+#    #+#              #
-#    Updated: 2021/03/09 18:22:37 by josantos         ###   ########.fr        #
+#    Updated: 2021/03/15 14:08:15 by josantos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -47,7 +47,9 @@ SRCS= ft_memset.c \
       ft_putnbr_fd.c \
 	  ft_putchar_bonus.c \
 	  ft_putstr_bonus.c \
-	  ft_putstr_len_bonus.c
+	  ft_putstr_len_bonus.c \
+	  ft_itoa_base_bonus.c \
+	  ft_l_itoa_base_bonus.c
 OBJS= $(SRCS:.c=.o)
 SRCSB= ft_lstnew.c \
        ft_lstadd_front.c \

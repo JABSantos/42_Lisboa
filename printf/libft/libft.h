@@ -6,7 +6,7 @@
 /*   By: josantos <josantos@42lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:17:37 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/09 18:15:48 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/15 14:10:50 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 										void (*del)(void *));
 int				ft_putchar(char a);
-void			*ft_putstr(char *str);
+int				ft_putstr(char *str);
 int				ft_putstr_len(char *str, int len);
+char			*ft_itoa_base(unsigned int n, char *base);
+char			*ft_l_itoa_base(unsigned long, char *base);
 #endif

@@ -6,7 +6,7 @@
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 12:21:53 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/10 18:39:36 by josantos         ###   ########.fr       */
+/*   Updated: 2021/03/13 13:41:35 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_flags			init(void)
 	flags.star = 0;
 	flags.min_width = 0;
 	flags.point = 0;
-	flags.precision = -1;
+	flags.precision = 0;
 	flags.type = 0;
 	return (flags);
 }

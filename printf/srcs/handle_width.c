@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_bonus.c                                  :+:      :+:    :+:   */
+/*   handle_width.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josantos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 16:10:59 by josantos          #+#    #+#             */
-/*   Updated: 2021/03/13 15:37:57 by josantos         ###   ########.fr       */
+/*   Created: 2021/03/13 15:04:48 by josantos          #+#    #+#             */
+/*   Updated: 2021/03/13 15:54:04 by josantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
-int		ft_putstr(char *str)
+int		handle_width(t_flags *flags, int len)
 {
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
+	int count;
+
+	count = 0;
+	while (flags->min_width-- > len)
+	{
+		if (!flags->zero)
+		{
+			count += ft_putchar(' ');
+		}
+		if (flags->zero)
+		{
+			count += ft_putchar('0');
+		}
+	}
+	return (count);
 }
